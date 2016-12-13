@@ -1,4 +1,4 @@
-// Update with your config settings.
+require('dotenv').config();
 
 module.exports = {
 
@@ -8,6 +8,6 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.PRODUCTION_DB_URL
+    connection: process.env.PRODUCTION_DB_URL + '?ssl=true'
   }
 };
