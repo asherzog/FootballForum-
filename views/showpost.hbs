@@ -1,0 +1,40 @@
+{{#each allData}}
+  <div class="row">
+    <div class="card horizontal green darken-2 grey-text text-lighten-5">
+      <div class="col s2">
+        <h4>{{this.name}}</h4>
+        <p>{{this.date}}</p>
+        <p>{{this.email}}</p>
+      </div>
+      <div class="col s8 offset-s2">
+        <p class="col s9">{{this.comment}}</p>
+        <div class="card-action col s3">
+          <form class="" action="/packers/{{this.id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn yellow green-text text-darken-2">Delete</button>
+          </form>
+          <a href="/packers" class="yellow-text">back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <form class="col s12" action="/packers/{{this.id}}?_method=PUT" method="POST">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" name="name" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="email" type="email" name="email"class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <textarea id="textarea1" name="comment" class="materialize-textarea"></textarea>
+        <label for="textarea1">Comment</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">update</button>
+    </form>
+  </div>
+
+{{/each}}
