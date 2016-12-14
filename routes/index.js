@@ -4,10 +4,15 @@ require('dotenv').config();
 var knex = require('../db/knex');
 
 /* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index')
+});
+
+
 router.get('/packers', function(req, res, next) {
   knex('packers')
   .then(function(data) {
-    res.render('index', { allData: data});
+    res.render('viewall', { allData: data});
   });
 });
 

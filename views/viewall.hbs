@@ -1,0 +1,39 @@
+{{#each allData}}
+  <div class="row">
+    <div class="card horizontal green darken-2 grey-text text-lighten-5 hoverable">
+      <div class="col s2">
+        <h4>{{this.name}}</h4>
+        <p class="date yellow-text">{{this.date}}</p>
+        <p class="eaddress">{{this.email}}</p>
+      </div>
+      <div class="col s8 offset-s2">
+        <div class="row">
+          <p class="comments col s8">{{this.comment}}</p>
+          <div class="col s2 offset-s2 card-action">
+            <a href='/packers/{{this.id}}' class="yellow-text">edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+<div class="row">
+  <form class="col s12" action="/packers" method="post">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="first_name" type="text" name="name" class="validate">
+        <label for="first_name">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="email" type="email" name="email"class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="input-field col s12">
+      <textarea id="textarea1" name="comment" class="materialize-textarea"></textarea>
+      <label for="textarea1">Comment</label>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+  </form>
+</div>

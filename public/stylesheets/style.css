@@ -1,0 +1,16 @@
+.wrap {
+  padding: 2em;
+}
+
+.date,
+.eaddress {
+  font-size: 0.75em;
+}
+
+h4 {
+  font-size: 3em;
+}
+
+.comments {
+  font-size: 1.5em;
+}
